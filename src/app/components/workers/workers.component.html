@@ -1,0 +1,12 @@
+<div class="workers-list-container">
+    <div class="caption">
+        Workers
+    </div>
+    <div *ngFor="let worker of workersData;let i=index">
+        <div 
+            [ngClass]="{'worker-slot':!worker.selected, 'worker-slot-selected':worker.selected}"
+            (click)="showCurrentFlights(worker.id, i)">
+                {{worker.name}}
+        </div>
+    </div>
+</div>

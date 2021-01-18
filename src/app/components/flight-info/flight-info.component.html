@@ -1,0 +1,22 @@
+<div 
+    class="flight-info-container"
+    *ngIf="this.flightsService.flightInfo$.getValue()">
+    <div class="flight-info-slot">
+        <div class="flight-info-caption">Plane Number</div>
+        <div class="flight-info-data">{{flightInfo.plane}}</div>
+    </div>
+    <div class="flight-info-slot">
+        <div class="flight-info-caption">Duration</div>
+        <div class="flight-info-data">{{flightInfo.duration | hoursMinites}}</div>
+    </div>
+    <div class="flight-info-slot">
+        <div class="flight-info-caption">Origin gate</div>
+        <div class="flight-info-data">{{flightInfo.from_gate}}</div>
+    </div>
+    <div 
+        class="flight-info-slot" 
+        [ngStyle]="{'border-bottom': '3px solid lightgrey'}">
+            <div class="flight-info-caption">Destination gate</div>
+            <div class="flight-info-data">{{flightInfo.to_gate}}</div>
+    </div>
+</div>
